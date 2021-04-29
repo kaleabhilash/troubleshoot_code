@@ -1,0 +1,17 @@
+This code is created to connect to MS-SQL server using Python library 'pyodbc'.
+Python version 3.9.4
+Python library used pyodbc
+
+This is basic code which makes connection and show output in raw format.
+
+
+'''
+import pyodbc 
+
+conn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0};SERVER=10.0.0.10;PORT=4430;DATABASE=Bkup_Integra_EOD;Trusted_Connection=YES;')
+cursor = conn.cursor()
+cursor.execute('select top 10(usr_id) from usrmast')
+
+for row in cursor:
+    print(row)
+'''
